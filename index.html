@@ -1,0 +1,1358 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ICOLINK Technologies Limited | Fast, Reliable Internet</title>
+
+  <meta name="description"
+        content="ICOLINK Technologies Limited provides fast, reliable and affordable internet solutions for homes, businesses and communities.">
+
+  <style>
+    :root {
+      --blue: #0754b8;
+      --deep-blue: #063b88;
+      --orange: #f58220;
+      --light-blue: #eef5ff;
+      --text: #172b48;
+      --muted: #68768a;
+      --white: #ffffff;
+      --border: #dfe7f1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    .topbar {
+      width: 100%;
+      min-height: 90px;
+      padding: 14px 4%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      background: white;
+      border-bottom: 1px solid #edf0f5;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .brand img {
+      width: 190px;
+      max-height: 65px;
+      object-fit: contain;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .nav a {
+      font-size: 14px;
+      font-weight: 700;
+      color: #253752;
+      transition: color 0.2s;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--blue);
+    }
+
+    .touch {
+      display: inline-block;
+      padding: 12px 20px;
+      background: var(--blue);
+      color: white;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .touch:hover {
+      background: var(--deep-blue);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 0;
+      font-size: 28px;
+      cursor: pointer;
+      color: var(--blue);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 570px;
+      padding: 65px 5%;
+      display: grid;
+      grid-template-columns: 1fr 0.95fr;
+      align-items: center;
+      gap: 45px;
+      position: relative;
+      overflow: hidden;
+      background: #f5f8fd;
+    }
+
+    .hero-copy {
+      max-width: 650px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .brand-large img {
+      width: 235px;
+      max-height: 100px;
+      object-fit: contain;
+      object-position: left center;
+      margin-bottom: 25px;
+    }
+
+    .eyebrow,
+    .section-kicker {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 800;
+      color: var(--orange);
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 4.2vw, 57px);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      color: #132d52;
+      margin-bottom: 23px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--blue);
+    }
+
+    .intro {
+      font-size: 15px;
+      line-height: 1.9;
+      color: #5c6d83;
+      margin-bottom: 28px;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn.primary {
+      color: white;
+      background: var(--blue);
+    }
+
+    .btn.primary:hover {
+      background: var(--deep-blue);
+    }
+
+    .btn.secondary {
+      color: var(--blue);
+      background: white;
+      border: 1px solid var(--blue);
+    }
+
+    /* COMPANY PHOTO */
+
+    .hero-photo {
+      width: 100%;
+      height: 440px;
+      position: relative;
+      z-index: 1;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #e0eaf7;
+      box-shadow: 0 15px 40px #18365b1a;
+    }
+
+    .hero-photo > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+    }
+
+    .wifi-note {
+      position: absolute;
+      bottom: 22px;
+      left: 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: white;
+      color: var(--blue);
+      padding: 13px 18px;
+      border-radius: 8px;
+      box-shadow: 0 5px 20px #00000015;
+      font-size: 12px;
+      line-height: 1.4;
+      font-weight: 800;
+    }
+
+    .wifi-symbol {
+      font-size: 35px;
+      color: var(--orange);
+    }
+
+    .wifi-note i {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: var(--orange);
+      border-radius: 50%;
+      top: 8px;
+      right: 8px;
+    }
+
+    .blue-corner {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: 0;
+      right: 0;
+      background: var(--blue);
+      clip-path: polygon(100% 0, 100% 100%, 0 0);
+      opacity: 0.12;
+    }
+
+    .orange-corner {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      bottom: 0;
+      left: 0;
+      background: var(--orange);
+      clip-path: polygon(0 0, 100% 100%, 0 100%);
+      opacity: 0.15;
+    }
+
+    /* BENEFITS */
+
+    .benefits {
+      padding: 35px 5%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      background: white;
+      border-bottom: 1px solid #edf0f5;
+    }
+
+    .benefits article {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    .benefit-icon {
+      width: 49px;
+      height: 49px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      color: var(--blue);
+      background: #eaf2ff;
+    }
+
+    .benefits b {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 4px;
+      color: #17345a;
+    }
+
+    .benefits p {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ABOUT */
+
+    .section {
+      padding: 75px 5%;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 38px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(27px, 3.4vw, 38px);
+      line-height: 1.25;
+      color: #17345a;
+      margin-bottom: 14px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .about-section {
+      background: #f7faff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .about-photo {
+      min-height: 330px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #e5edf8;
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 330px;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+
+    .about-copy h3 {
+      font-size: 25px;
+      color: #17345a;
+      margin-bottom: 15px;
+    }
+
+    .about-copy p {
+      color: #63738a;
+      margin-bottom: 17px;
+      font-size: 15px;
+    }
+
+    .about-copy .btn {
+      margin-top: 5px;
+    }
+
+    /* SERVICES */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      padding: 27px 22px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: white;
+      transition: 0.25s;
+    }
+
+    .service-card:hover {
+      border-color: #b9d3f6;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px #153d6b0d;
+    }
+
+    .service-icon {
+      width: 53px;
+      height: 53px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9px;
+      color: var(--blue);
+      background: #eaf2ff;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      color: #17345a;
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* PACKAGES */
+
+    .packages {
+      padding: 75px 5%;
+      background: #f4f8ff;
+    }
+
+    .package-intro {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .package-intro h2 {
+      color: #17345a;
+      font-size: clamp(27px, 3.4vw, 38px);
+      margin-bottom: 12px;
+    }
+
+    .package-intro > p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .locations {
+      margin: 28px auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .locations b {
+      color: #17345a;
+      font-size: 13px;
+      margin-right: 5px;
+    }
+
+    .locations button {
+      border: 1px solid #d4e1f2;
+      padding: 9px 15px;
+      border-radius: 5px;
+      background: white;
+      color: #294563;
+      cursor: pointer;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .locations button.active,
+    .locations button:hover {
+      background: var(--blue);
+      color: white;
+      border-color: var(--blue);
+    }
+
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .plan {
+      background: white;
+      border: 1px solid #e0e8f4;
+      border-radius: 9px;
+      padding: 25px 12px;
+      text-align: center;
+      transition: 0.2s;
+    }
+
+    .plan:hover {
+      transform: translateY(-4px);
+      border-color: var(--blue);
+      box-shadow: 0 12px 30px #17345a12;
+    }
+
+    .plan h3 {
+      color: var(--blue);
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .plan .price {
+      font-size: 25px;
+      font-weight: 800;
+      color: #17345a;
+      white-space: nowrap;
+    }
+
+    .plan .price small {
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .plan > span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin: 5px 0 18px;
+    }
+
+    .plan a {
+      display: block;
+      padding: 10px 8px;
+      color: white;
+      background: var(--blue);
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* PROJECTS */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 23px;
+    }
+
+    .project-card {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: white;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .project-placeholder {
+      height: 230px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      background: #eaf1fb;
+    }
+
+    .project-info {
+      padding: 22px;
+    }
+
+    .project-info h3 {
+      color: #17345a;
+      margin-bottom: 8px;
+    }
+
+    .project-info p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* CONTACT */
+
+    .contact-section {
+      background: #f5f8fd;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .contact-card {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 27px;
+      border-radius: 8px;
+    }
+
+    .contact-card h3 {
+      color: #17345a;
+      margin-bottom: 12px;
+    }
+
+    .contact-card p {
+      font-size: 14px;
+      color: var(--muted);
+      overflow-wrap: anywhere;
+    }
+
+    .contact-card a {
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      padding: 28px 5%;
+      background: #082b57;
+      color: white;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer p,
+    .footer a {
+      font-size: 13px;
+    }
+
+    .footer a:hover {
+      color: #ffb45e;
+    }
+
+    .footer strong {
+      color: #ffad4d;
+      font-size: 13px;
+    }
+
+    /* RESPONSIVE DESIGN */
+
+    @media (max-width: 1050px) {
+      .topbar {
+        padding: 14px 3%;
+        gap: 14px;
+      }
+
+      .brand img {
+        width: 150px;
+      }
+
+      .nav {
+        gap: 14px;
+      }
+
+      .nav a {
+        font-size: 12px;
+      }
+
+      .touch {
+        padding: 10px 12px;
+        font-size: 12px;
+      }
+
+      .benefits {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .plans {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .topbar {
+        min-height: 76px;
+        flex-wrap: wrap;
+      }
+
+      .brand img {
+        width: 155px;
+      }
+
+      .menu-toggle {
+        display: block;
+        margin-left: auto;
+      }
+
+      .touch {
+        display: none;
+      }
+
+      .nav {
+        display: none;
+        order: 5;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 0;
+      }
+
+      .nav.open {
+        display: flex;
+      }
+
+      .nav a {
+        padding: 12px 8px;
+        font-size: 14px;
+        border-top: 1px solid #edf0f5;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 48px 5%;
+        gap: 32px;
+      }
+
+      .hero h1 {
+        font-size: clamp(35px, 8vw, 48px);
+      }
+
+      .hero-photo {
+        height: 400px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .plans {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .desktop {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .benefits {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 30px 7%;
+      }
+
+      .benefits article {
+        justify-content: flex-start;
+      }
+
+      .services-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .plans {
+        grid-template-columns: 1fr;
+      }
+
+      .plan {
+        padding: 24px;
+      }
+
+      .hero-photo {
+        height: 350px;
+      }
+
+      .section,
+      .packages {
+        padding: 55px 5%;
+      }
+
+      .locations {
+        gap: 8px;
+      }
+
+      .locations b {
+        width: 100%;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="ICOLINK home">
+      <img src="icolink-logo.png"
+           alt="ICOLINK Technologies Limited"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+      <span style="display:none;font-size:23px;font-weight:800;color:#0754b8">
+        ICO<span style="color:#f58220">LINK</span>
+        <small style="display:block;font-size:9px;letter-spacing:2px">
+          TECHNOLOGIES LIMITED
+        </small>
+      </span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+            type="button" aria-label="Open menu"
+            aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="nav" id="nav">
+      <a class="active" href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#packages">Packages</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a class="touch" href="#contact">☎ &nbsp;Get in Touch</a>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+      <div class="hero-copy">
+        <div class="brand-large">
+          <img src="icolink-logo.png"
+               alt="ICOLINK Technologies Limited"
+               onerror="this.style.display='none'">
+        </div>
+
+        <p class="eyebrow">HIGH-SPEED INTERNET SOLUTIONS</p>
+
+        <h1>Connect Your World<br>with <em>ICOLINK</em></h1>
+
+        <p class="intro">
+          We provide fast, reliable and affordable internet solutions
+          for homes, businesses and communities. Experience seamless
+          connectivity with ICOLINK Technologies Limited.
+        </p>
+
+        <div class="actions">
+          <a class="btn primary" href="#packages">
+            ◉ &nbsp; Our Packages
+          </a>
+          <a class="btn secondary" href="#about">
+            Learn More &nbsp;➜
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <img src="icolinkimage.jpg.jpeg"
+             alt="ICOLINK team member working at a laptop">
+
+        <div class="wifi-note">
+          <div class="wifi-symbol">◔</div>
+          <span>Faster<br>Stronger<br>Together</span>
+          <i></i>
+        </div>
+      </div>
+
+      <div class="blue-corner"></div>
+      <div class="orange-corner"></div>
+
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="benefits" id="services">
+
+      <article>
+        <span class="benefit-icon">◴</span>
+        <div>
+          <b>Fast Internet</b>
+          <p>Enjoy high speeds<br>for all your needs.</p>
+        </div>
+      </article>
+
+      <article>
+        <span class="benefit-icon">♢</span>
+        <div>
+          <b>Reliable Connection</b>
+          <p>Stay connected<br>with dependable service.</p>
+        </div>
+      </article>
+
+      <article>
+        <span class="benefit-icon">♧</span>
+        <div>
+          <b>Affordable Packages</b>
+          <p>Great value<br>for your money.</p>
+        </div>
+      </article>
+
+      <article>
+        <span class="benefit-icon">◉</span>
+        <div>
+          <b>Customer Support</b>
+          <p>We're here<br>to help you.</p>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about-section" id="about">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-kicker">ABOUT OUR COMPANY</span>
+          <h2>Get to Know ICOLINK</h2>
+          <p>
+            Connecting homes, businesses and communities with
+            reliable internet solutions.
+          </p>
+        </div>
+
+        <div class="about-grid">
+
+          <!-- UPDATED ABOUT IMAGE -->
+          <div class="about-photo">
+            <img src="gettoknowicolink.jpg"
+                 alt="Get to Know ICOLINK Technologies Limited">
+          </div>
+
+          <div class="about-copy">
+            <h3>ICOLINK Technologies Limited</h3>
+
+            <p>
+              We provide internet solutions designed to help homes,
+              businesses and communities stay connected.
+            </p>
+
+            <p>
+              Our focus is on reliable connectivity, affordable
+              internet packages and customer support.
+            </p>
+
+            <p>
+              Explore our packages and contact our team to learn
+              about internet service availability in your area.
+            </p>
+
+            <a class="btn primary" href="#contact">Contact Our Team</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="service-details">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-kicker">WHAT WE OFFER</span>
+          <h2>Our Services</h2>
+          <p>
+            Internet services designed for everyday connectivity
+            at home and in business.
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <article class="service-card">
+            <div class="service-icon">⌂</div>
+            <h3>Home Internet</h3>
+            <p>
+              Internet packages for households, entertainment,
+              learning and everyday online activities.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">▤</div>
+            <h3>Business Internet</h3>
+            <p>
+              Connectivity solutions for businesses that depend
+              on reliable internet access.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">⌁</div>
+            <h3>Internet Installation</h3>
+            <p>
+              Contact our team to enquire about installation
+              and service availability.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">◉</div>
+            <h3>Customer Support</h3>
+            <p>
+              Get in touch with our team for enquiries about
+              internet packages and services.
+            </p>
+          </article>
+
+          <!-- ADDED CCTV INSTALLATIONS -->
+          <article class="service-card">
+            <div class="service-icon">📹</div>
+            <h3>CCTV Installations</h3>
+            <p>
+              CCTV installation solutions to help homes and
+              businesses monitor and secure their premises.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PACKAGES -->
+    <section class="packages" id="packages">
+      <div class="container">
+
+        <div class="package-intro">
+          <span class="section-kicker">INTERNET PACKAGES</span>
+          <h2>Choose Your Perfect Plan</h2>
+
+          <p>
+            Explore the available internet packages for your area.
+          </p>
+
+          <div class="locations">
+            <b>⌖ &nbsp; Select Location</b>
+
+            <button type="button" class="active"
+                    data-location="Nyahururu">Nyahururu</button>
+
+            <button type="button"
+                    data-location="Maralal">Maralal</button>
+
+            <button type="button"
+                    data-location="Ol Kalou">Ol Kalou</button>
+
+            <button type="button"
+                    data-location="Ma4">Ma4</button>
+          </div>
+        </div>
+
+        <div class="plans" id="plans">
+
+          <article class="plan">
+            <h3>8 Mbps</h3>
+            <p class="price"><small>KSh</small> 1,500</p>
+            <span>per month</span>
+            <a href="#contact">Get Started</a>
+          </article>
+
+          <article class="plan">
+            <h3>12 Mbps</h3>
+            <p class="price"><small>KSh</small> 2,000</p>
+            <span>per month</span>
+            <a href="#contact">Get Started</a>
+          </article>
+
+          <article class="plan">
+            <h3>20 Mbps</h3>
+            <p class="price"><small>KSh</small> 2,500</p>
+            <span>per month</span>
+            <a href="#contact">Get Started</a>
+          </article>
+
+          <article class="plan">
+            <h3>25 Mbps</h3>
+            <p class="price"><small>KSh</small> 3,000</p>
+            <span>per month</span>
+            <a href="#contact">Get Started</a>
+          </article>
+
+          <article class="plan">
+            <h3>30 Mbps</h3>
+            <p class="price"><small>KSh</small> 3,500</p>
+            <span>per month</span>
+            <a href="#contact">Get Started</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-kicker">OUR WORK</span>
+          <h2>Projects & Connectivity</h2>
+          <p>
+            Explore our work and the connections we help bring
+            to homes and businesses.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- PROJECT 1 -->
+          <article class="project-card">
+            <img src="project1.jpg" alt="ICOLINK Project 1">
+            <div class="project-info">
+              <h3>Project 1</h3>
+              <p>ICOLINK Technologies Limited project.</p>
+            </div>
+          </article>
+
+          <!-- PROJECT 2 -->
+          <article class="project-card">
+            <img src="project2.jpg" alt="ICOLINK Project 2">
+            <div class="project-info">
+              <h3>Project 2</h3>
+              <p>ICOLINK Technologies Limited project.</p>
+            </div>
+          </article>
+
+          <!-- PROJECT 3 -->
+          <article class="project-card">
+            <img src="project3.jpg" alt="ICOLINK Project 3">
+            <div class="project-info">
+              <h3>Project 3</h3>
+              <p>ICOLINK Technologies Limited project.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-kicker">GET IN TOUCH</span>
+          <h2>Connect with ICOLINK</h2>
+          <p>
+            Contact our team about internet packages,
+            availability and service enquiries.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+
+          <article class="contact-card">
+            <h3>☎ Phone</h3>
+            <p>
+              <a href="tel:0703126213">0703 126 213</a>
+            </p>
+          </article>
+
+          <article class="contact-card">
+            <h3>✉ Email</h3>
+            <p>
+              <a href="mailto:icolinktechnologies@gmail.com">
+                icolinktechnologies@gmail.com
+              </a>
+            </p>
+          </article>
+
+          <article class="contact-card">
+            <h3>◎ Website</h3>
+            <p>
+              <a href="https://icolinktechnologiesltd.co.ke">
+                icolinktechnologiesltd.co.ke
+              </a>
+            </p>
+          </article>
+
+          <article class="contact-card">
+            <h3>Internet Packages</h3>
+            <p>
+              <a href="#packages">Explore available plans</a>
+              and contact us for service availability.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>
+        © <span id="year"></span> ICOLINK Technologies Limited.
+        All rights reserved.
+      </p>
+
+      <a href="#home">Back to top ↑</a>
+
+      <strong>Fast, Reliable Internet</strong>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation
+    const menuToggle = document.getElementById("menuToggle");
+    const nav = document.getElementById("nav");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = nav.classList.toggle("open");
+
+      menuToggle.textContent = isOpen ? "×" : "☰";
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close menu" : "Open menu"
+      );
+    });
+
+    nav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        nav.classList.remove("open");
+        menuToggle.textContent = "☰";
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // Current year
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Internet package prices by location
+    const packageData = {
+      "Nyahururu": [
+        [8, 1500],
+        [12, 2000],
+        [20, 2500],
+        [25, 3000],
+        [30, 3500]
+      ],
+
+      "Maralal": [
+        [12, 2000],
+        [15, 2500],
+        [20, 3000],
+        [25, 3500],
+        [35, 4000]
+      ],
+
+      "Ol Kalou": [
+        [8, 1500],
+        [12, 2000],
+        [20, 2500],
+        [25, 3000],
+        [30, 3500]
+      ],
+
+      "Ma4": [
+        [8, 1500],
+        [12, 2000],
+        [20, 2500],
+        [25, 3000],
+        [30, 3500]
+      ]
+    };
+
+    const plansContainer = document.getElementById("plans");
+    const locationButtons = document.querySelectorAll(
+      ".locations button"
+    );
+
+    function renderPackages(location) {
+      const packages = packageData[location];
+
+      plansContainer.innerHTML = packages.map(function (plan) {
+        const speed = plan[0];
+        const price = plan[1].toLocaleString("en-KE");
+
+        const message =
+          "Hello ICOLINK, I am interested in the " +
+          speed + " Mbps internet package costing KSh " +
+          price + " per month in " + location + ".";
+
+        const whatsappUrl =
+          "https://wa.me/254703126213?text=" +
+          encodeURIComponent(message);
+
+        return `
+          <article class="plan">
+            <h3>${speed} Mbps</h3>
+            <p class="price"><small>KSh</small> ${price}</p>
+            <span>per month · ${location}</span>
+            <a href="${whatsappUrl}" target="_blank"
+               rel="noopener noreferrer">Get Started</a>
+          </article>
+        `;
+      }).join("");
+    }
+
+    locationButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        locationButtons.forEach(function (item) {
+          item.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        renderPackages(button.dataset.location);
+      });
+    });
+
+    // Display the initial location's packages
+    renderPackages("Nyahururu");
+  </script>
+
+</body>
+</html>

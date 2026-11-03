@@ -1,0 +1,71 @@
+*{box-sizing:border-box}
+:root{--blue:#06439b;--navy:#07377f;--orange:#f6a000;--pale:#eef6ff;--ink:#102e5f}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#f9fbff}
+a{color:inherit;text-decoration:none}
+.topbar{height:100px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 8.1%;gap:24px}
+.brand{position:relative;display:block;line-height:1}
+.brand-small{width:235px;min-width:180px;height:68px;padding-top:6px}
+.brand-mark{font-weight:900;font-size:34px;color:#183f99;letter-spacing:-4px}
+.brand-mark span{font-size:.85em}
+.brand-name{font-weight:900;font-size:34px;color:#ef9700;letter-spacing:-2px}
+.brand-sub{display:block;color:#e69a00;font-weight:bold;font-size:13px;margin-left:32px;margin-top:-1px}
+.brand strong{display:block;font-size:12px;margin-left:42px;margin-top:2px;color:#17366d}
+.nav{display:flex;align-items:center;gap:34px;font-size:15px;white-space:nowrap}
+.nav a{padding:15px 0}
+.nav .active{color:#06439b;border-bottom:2px solid #06439b;font-weight:bold}
+.touch,.btn,.plan a{background:var(--orange);color:#fff;border-radius:13px;font-weight:bold;display:inline-flex;align-items:center;justify-content:center}
+.touch{padding:15px 20px;white-space:nowrap;font-size:14px}
+.hero{height:493px;position:relative;overflow:hidden;display:grid;grid-template-columns:49% 51%;background:linear-gradient(110deg,#f5f9ff 0%,#eaf4ff 51%,#d8eaff 51%)}
+.hero-copy{z-index:2;padding:33px 0 20px 8.4%;position:relative}
+.brand-large{height:128px;width:400px;padding-top:0}
+.brand-large .brand-mark,.brand-large .brand-name{font-size:58px}
+.brand-large .brand-sub{font-size:19px;margin-left:55px;margin-top:-3px}
+.brand-large strong{font-size:18px;margin-left:76px;margin-top:3px}
+.eyebrow{font-size:16px;font-weight:bold;letter-spacing:1.4px;margin:4px 0 6px;color:#164c96}
+h1{font-size:43px;line-height:1.12;letter-spacing:-1.4px;margin:0 0 14px;color:#07377f;font-weight:800}
+h1 em{font-style:normal;color:#f19b00}
+.intro{font-size:15.5px;line-height:1.38;margin:0 0 18px;color:#172c4e}
+.actions{display:flex;gap:17px}
+.btn{height:45px;padding:0 31px;font-size:14px;border-radius:13px}
+.secondary{background:#fff;color:#123a7b;border:2px solid #234c8b}
+.hero-photo{position:relative;overflow:hidden;background:#d8e6f5}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.hero-photo.image-missing{background:linear-gradient(135deg,#d9e9f8,#8caac5)}
+.hero-photo.image-missing:after{content:"Add your image as icolinkimage.jpg";position:absolute;inset:0;display:grid;place-items:center;color:#123a7b;font-weight:bold;background:#e7f1fb}
+.wifi-note{position:absolute;right:6%;top:35px;color:white;text-align:center;text-shadow:0 2px 5px #17314d;font-weight:bold;font-size:29px;line-height:1.15;transform:rotate(-7deg)}
+.wifi-symbol{font-size:88px;line-height:.9;font-family:Arial}
+.wifi-note i{display:block;width:120px;height:5px;background:var(--orange);transform:rotate(-8deg);margin:10px auto}
+.blue-corner{position:absolute;z-index:3;left:0;bottom:0;width:190px;height:110px;background:#0753aa;clip-path:polygon(0 0,100% 100%,0 100%)}
+.orange-corner{position:absolute;z-index:3;right:0;bottom:0;width:260px;height:155px;background:var(--orange);clip-path:polygon(100% 0,100% 100%,0 100%)}
+.benefits{min-height:130px;background:#eef6ff;display:grid;grid-template-columns:repeat(4,1fr);padding:25px 8.2%;gap:0}
+.benefits article{display:flex;align-items:center;gap:18px;padding:0 24px;border-right:1px solid #d0dfef}
+.benefits article:first-child{padding-left:0}
+.benefits article:last-child{border:0;padding-right:0}
+.benefit-icon{font-size:42px;color:#08459a;font-weight:bold;min-width:45px;text-align:center}
+.benefits b{font-size:14px;color:#07418e}
+.benefits p{font-size:13px;line-height:1.4;margin:7px 0 0;color:#172c4e}
+.packages{min-height:225px;display:grid;grid-template-columns:36% 64%;gap:24px;padding:28px 8.2% 24px;background:#fbfcff}
+.section-kicker{color:#e49a00;font-weight:bold;font-size:13px}
+.package-intro h2{font-size:30px;letter-spacing:-.7px;color:#07377f;margin:4px 0 6px}
+.package-intro p{font-size:14px;line-height:1.4;margin:0 0 18px}
+.locations{display:flex;align-items:center;border:1px solid #d7e1ed;border-radius:28px;overflow:hidden;height:40px;font-size:12px;white-space:nowrap}
+.locations b{background:#0753bd;color:#fff;padding:14px 17px;border-radius:25px}
+.locations span{padding:0 13px}
+.locations span:first-of-type{border-bottom:2px solid var(--orange);padding-bottom:7px}
+.plans{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;align-items:center}
+.plan{background:white;border:1px solid #dce5ef;border-radius:12px;text-align:center;min-width:0;padding:14px 8px 12px;box-shadow:0 1px 2px #dfe6ef}
+.plan h3{font-size:16px;color:#06418e;margin:0 0 10px}
+.plan p{font-size:23px;font-weight:bold;margin:0 0 3px;color:#17396f;white-space:nowrap}
+.plan small{font-size:12px}
+.plan>span{font-size:12px}
+.plan a{display:flex;margin:16px auto 0;height:32px;max-width:125px;border-radius:12px;font-size:12px}
+.footer{min-height:77px;background:#06439b;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 8.2%;gap:20px;font-size:15px}
+.footer strong{background:var(--orange);color:#143a76;font-style:italic;padding:27px 20px;align-self:stretch;white-space:nowrap;clip-path:polygon(18% 0,100% 0,100% 100%,0 100%)}
+.about-hidden{padding:20px 8%;background:#fff}
+@media(max-width:1100px){.topbar{padding:0 4%;gap:14px}.nav{gap:15px;font-size:13px}.brand-small{width:190px}.touch{padding:13px}.hero-copy{padding-left:5%}h1{font-size:37px}.intro{font-size:14px}.benefits,.packages{padding-left:4%;padding-right:4%}.benefits article{padding:0 12px}.packages{grid-template-columns:1fr}.plans{min-height:150px}.footer{padding:0 4%;font-size:12px}}
+@media(max-width:720px){.topbar{height:auto;min-height:82px;flex-wrap:wrap;padding:10px 5%}.brand-small{height:55px;width:180px}.brand-small .brand-mark,.brand-small .brand-name{font-size:27px}.brand-sub{font-size:10px}.brand strong{font-size:10px}.nav{order:3;width:100%;overflow-x:auto;gap:22px}.touch{font-size:12px;padding:12px}.hero{height:auto;display:flex;flex-direction:column}.hero-copy{padding:25px 6% 30px}.brand-large{height:100px;width:100%}.brand-large .brand-mark,.brand-large .brand-name{font-size:43px}.brand-large .brand-sub{font-size:14px;margin-left:42px}.brand-large strong{font-size:13px;margin-left:54px}.eyebrow{font-size:12px}h1{font-size:34px}.intro br{display:none}.hero-photo{height:300px}.wifi-note{font-size:22px}.wifi-symbol{font-size:65px}.blue-corner,.orange-corner{display:none}.benefits{grid-template-columns:1fr 1fr;padding:20px 5%;gap:18px}.benefits article{border:0;padding:0;gap:10px}.benefit-icon{font-size:32px;min-width:32px}.benefits b{font-size:12px}.benefits p{font-size:11px}.packages{padding:24px 5%;display:block}.package-intro h2{font-size:26px}.package-intro p br{display:none}.locations{overflow:auto;margin-bottom:20px}.locations span{padding:0 10px}.plans{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.plan:last-child{grid-column:span 2}.footer{padding:18px 5%;display:grid;grid-template-columns:1fr;gap:14px}.footer strong{clip-path:none;margin:0 -5.5%;padding:16px 5%;text-align:center}.about-hidden{padding:20px 5%}}
+
+/* Use the exact ICOLINK logo cropped from the supplied reference image. */
+.brand-small img{display:block;width:100%;height:68px;object-fit:contain;object-position:left center}.brand-large img{display:block;width:350px;height:127px;object-fit:contain;object-position:left top}
+@media(max-width:720px){.brand-small img{height:55px}.brand-large img{width:min(100%,350px);height:100px}}
